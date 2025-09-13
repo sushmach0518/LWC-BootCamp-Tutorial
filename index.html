@@ -1,12 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="scripttutorial.js" type="text/javascript"></script>
-    <title>LWC BootCamp</title>
-</head>
-<body>
-    <p>Welcome to the LWC BootCamp Tutorial</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-To-Lead Form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Create Lead</h1>
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+    <!--  If necessary, please modify the charset parameter to specify the        -->
+    <!--  character set of your HTML page.                                        -->
+    <!--  ----------------------------------------------------------------------  -->
+
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: Please add the following <FORM> element to your page.             -->
+    <!--  ----------------------------------------------------------------------  -->
+
+    <form id="webtolead"
+      action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DWU00000ES3oo"
+      method="POST"
+      onsubmit="beforesubmit()"
+    >
+      <input type="hidden" name="oid" value="00DWU00000ES3oo" />
+      <input type="hidden" name="Lead_Date__c" class="outputdate"/>
+      <input
+        type="hidden"
+        name="retURL"
+        value=""
+      />
+
+      <!--  ----------------------------------------------------------------------  -->
+      <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+      <!--  these lines if you wish to test in debug mode.                          -->
+      <!--  <input type="hidden" name="debug" value=1>                              -->
+      <!--  <input type="hidden" name="debugEmail"                                  -->
+      <!--  value="s.reddy.chidurala@accenture.com">                                -->
+      <!--  ----------------------------------------------------------------------  -->
+
+      <label for="first_name">First Name</label
+      ><input
+        id="first_name"
+        maxlength="40"
+        name="first_name"
+        size="20"
+        type="text"
+        required="true"
+      /><br />
+
+      <label for="last_name">Last Name</label
+      ><input
+        id="last_name"
+        maxlength="80"
+        name="last_name"
+        size="20"
+        type="text"
+        required="true"
+      /><br />
+
+      <label for="email">Email</label
+      ><input
+        id="email"
+        maxlength="80"
+        name="email"
+        size="20"
+        type="text"
+        required="true"
+      /><br />
+
+      <!-- Lead Date:<span class="dateInput dateOnlyInput">
+        <input
+          id="00NWU00001BAVQH"
+          name="00NWU00001BAVQH"
+          size="12"
+          type="text" /></span
+      ><br /> -->
+      <label for="email">Lead Date</label>
+      <input type="date" required="true" class="inputdate"/>
+      
+
+      <input type="submit" name="submit" class="submit"  />
+    </form>
+  </body>
 </html>
